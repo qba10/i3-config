@@ -1,0 +1,22 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 900,
+       "width": 1440,
+       "x": 0,
+       "y": 0
+    },
+    "name": "i3 move container to workspace - Szukaj w Google - Mozilla Firefox",
+    "percent": 1,
+    "swallows": [
+       {
+        "class": "^Firefox$",
+        "instance": "^Navigator$"
+       }
+    ],
+    "type": "con"
+}
+

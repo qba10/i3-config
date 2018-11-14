@@ -1,0 +1,85 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 434,
+               "width": 734,
+               "x": 0,
+               "y": 0
+            },
+            "name": "ppiorkow@ppiorkow-desk:~",
+            "percent": 0.5,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^Gnome-terminal$",
+                    "instance": "^gnome-terminal-server$"
+                }
+            ]
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 434,
+               "width": 734,
+               "x": 0,
+               "y": 0
+            },
+            "name": "ppiorkow@ppiorkow-desk:~",
+            "percent": 0.5,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^Gnome-terminal$",
+                    "instance": "^gnome-terminal-server$"
+                }
+            ]
+
+        }
+    ]
+}
+
+{
+    // splith split container with 1 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 434,
+               "width": 734,
+               "x": 0,
+               "y": 0
+            },
+            "name": "ppiorkow@ppiorkow-desk:~",
+            "percent": 1,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^Gnome-terminal$",
+                    "instance": "^gnome-terminal-server$"
+                }
+            ]
+
+        }
+    ]
+}
+

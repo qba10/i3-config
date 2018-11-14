@@ -1,0 +1,25 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 434,
+       "width": 734,
+       "x": 0,
+       "y": 0
+    },
+    "name": "ppiorkow@ppiorkow-desk:~",
+    "percent": 1,
+    "swallows": [
+       {
+       // "class": "^Gnome\\-terminal$",
+       // "instance": "^gnome\\-terminal\\-server$",
+       // "title": "^ppiorkow\\@ppiorkow\\-desk\\:\\~$",
+       // "transient_for": "^$",
+       // "window_role": "^gnome\\-terminal\\-window\\-84953c06\\-af06\\-48f4\\-a33d\\-f736914eed38$"
+       }
+    ],
+    "type": "con"
+}
+
