@@ -9,9 +9,15 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# work set monitors
 exec ~/.config/i3/work/displays.sh
 
+# set default mods keys
 set $mod Mod4
+set $alt Mod1
+
+# set default terminal
+set $termianl gnome-terminal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -32,17 +38,17 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec $termianl
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -106,6 +112,16 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $wsFirefox "1 Firefox"
+set $wsThuderbird "2 Thuderbird"
+set $wsSimics "3 Simics"
+set $wsCommunicators "4 Communicators"
+set $wsSpotify "5 Spotify"
+set $wsLinux "6 Linux Source"
+set $wsGuc "7 Guc"
+set $wsIgt "8 IGT"
+set $wsVirtualBox "9 VirtualBox"
+set $wsPerforce "0 Perforce"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -118,6 +134,16 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $alt+1 workspace $wsFirefox 
+bindsym $alt+2 workspace $wsThuderbird
+bindsym $alt+3 workspace $wsSimics
+bindsym $alt+4 workspace $wsCommunicators
+bindsym $alt+5 workspace $wsSpotify
+bindsym $alt+6 workspace $wsLinux
+bindsym $alt+7 workspace $wsGuc
+bindsym $alt+8 workspace $wsIgt
+bindsym $alt+9 workspace $wsVirtualBox
+bindsym $alt+0 workspace $wsPerforce
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -130,6 +156,16 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $alt+Shift+1 move container to workspace $wsFirefox
+bindsym $alt+Shift+2 move container to workspace $wsThuderbird
+bindsym $alt+Shift+3 move container to workspace $wsSimics
+bindsym $alt+Shift+4 move container to workspace $wsCommunicators 
+bindsym $alt+Shift+5 move container to workspace $wsSpotify
+bindsym $alt+Shift+6 move container to workspace $wsLinux
+bindsym $alt+Shift+7 move container to workspace $wsGuc
+bindsym $alt+Shift+8 move container to workspace $wsIgt
+bindsym $alt+Shift+9 move container to workspace $wsVirtualBox
+bindsym $alt+Shift+0 move container to workspace $wsPerforce
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -171,39 +207,46 @@ bar {
         font pango:Inconsolata 10
 	position top
 	tray_output none
-	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m spotify disk:root cpu memory date time pasink pasource dnf -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline
+	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m spotify cpu memory pasink pasource date time dnf -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline
 }
 
 # move focused workspace between monitors
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
-#lock screen
+# lock screen
 bindsym $mod+Ctrl+l exec --no-startup-id ~/.config/i3/lock.sh
 
-
-#new workspace
+# new workspace
 bindsym $mod+n exec --no-startup-id ~/.config/i3/i3-new-workspace
 
-#load workspace
-exec --no-startup-id i3-msg "workspace 1; append_layout ~/.config/i3/work/workspace-1.json"
-exec --no-startup-id i3-msg "workspace 2; append_layout ~/.config/i3/work/workspace-2.json"
-exec --no-startup-id i3-msg "workspace 3; append_layout ~/.config/i3/work/workspace-3.json"
-exec --no-startup-id i3-msg "workspace 4; append_layout ~/.config/i3/work/workspace-4.json"
-exec --no-startup-id i3-msg "workspace 5; append_layout ~/.config/i3/work/workspace-10.json"
+# load workspace
+exec --no-startup-id i3-msg "workspace $wsSimics; append_layout ~/.config/i3/work/workspace-1.json"
+exec --no-startup-id i3-msg "workspace $wsFirefox; append_layout ~/.config/i3/work/workspace-2.json"
+exec --no-startup-id i3-msg "workspace $wsCommunicators; append_layout ~/.config/i3/work/workspace-3.json"
+exec --no-startup-id i3-msg "workspace $wsThuderbird; append_layout ~/.config/i3/work/workspace-4.json"
+exec --no-startup-id i3-msg "workspace $wsSpotify; append_layout ~/.config/i3/work/workspace-10.json"
 
-exec --no-startup-id i3-msg "workspace 1; move workspace to output HDMI-1"
-exec --no-startup-id i3-msg "workspace 2; move workspace to output DP-1"
-exec --no-startup-id i3-msg "workspace 3; move workspace to output DVI-D-1"
-exec --no-startup-id i3-msg "workspace 5; move workspace to output DVI-D-1"
+exec --no-startup-id i3-msg "workspace $wsSimics; move workspace to output HDMI-1"
+exec --no-startup-id i3-msg "workspace $wsFirefox; move workspace to output DP-1"
+exec --no-startup-id i3-msg "workspace $wsCommunicators; move workspace to output DVI-D-1"
+exec --no-startup-id i3-msg "workspace $wsSpotify; move workspace to output DVI-D-1"
 
-exec --no-startup-id gnome-terminal
-exec --no-startup-id gnome-terminal
-exec --no-startup-id gnome-terminal
+exec --no-startup-id $termianl
+exec --no-startup-id $termianl
+exec --no-startup-id $termianl
 exec --no-startup-id firefox
 exec --no-startup-id pidgin
 exec --no-startup-id polari
 exec --no-startup-id thunderbird
 exec --no-startup-id LD_PRELOAD=/usr/lib/spotifywm.so spotify 
-exec --no-startup-id i3-msg "workspace 4; move workspace to output DVI-D-1"
+exec --no-startup-id i3-msg "workspace $wsThuderbird; move workspace to output DVI-D-1"
 
+# docker start container
+exec --no-startup-id docker start devbuntu
+
+# Assign Workspaces:
+assign [class="PV4"] $wsPerforce
+assign [class="VirtualBox Manager"] $wsVirtualBox
+
+# Create new terminal workspace
