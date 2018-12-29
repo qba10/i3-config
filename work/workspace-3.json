@@ -41,8 +41,8 @@
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^Org\\.gnome\\.Polari$",
-                "instance": "^org\\.gnome\\.Polari$"
+                "class": "^Polari$",
+                "instance": "^polari$"
                }
             ],
             "type": "con"

@@ -249,4 +249,7 @@ exec --no-startup-id docker start devbuntu
 assign [class="PV4"] $wsPerforce
 assign [class="VirtualBox Manager"] $wsVirtualBox
 
-# Create new terminal workspace
+bindsym --release $mod+h exec --no-startup-id "i3-vim-nav h"
+bindsym --release $mod+j exec --no-startup-id "i3-vim-nav j"
+bindsym --release $mod+k exec --no-startup-id "i3-vim-nav k"
+bindsym --release $mod+l exec --no-startup-id "i3-vim-nav l"
